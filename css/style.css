@@ -23,6 +23,10 @@ ul li {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-l);
@@ -109,9 +113,6 @@ footer {
   font-size: 1.1rem;
 }
 
-
-
-
 .hero-image {
   position: relative;
   min-width: 300px;
@@ -143,4 +144,54 @@ footer {
   line-height: 30px;
   margin-left: 25px;
   margin-right: 30px;
+}
+
+
+/* Desktop */
+@media screen and (min-width: 850px) {
+  .header-container .menu-button, li.socials {
+    display: none;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 30px 0;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .menu li {
+    color: var(--dark-blue);
+    border: none;
+    padding: 10px;
+    margin: 0 20px;
+  }
+
+  .menu li.log-in {
+    padding: 0;
+  }
+
+  .log-in button {
+    background-color: var(--soft-red);
+    width: 120px;
+    border: none;
+    border-radius: 3px;
+    color:#fff;
+    font-size: 1.1rem;
+    box-shadow: ;
+  }
+
 }
