@@ -115,23 +115,38 @@ footer {
 
 .hero-image {
   position: relative;
-  min-width: 300px;
+  width: 100%;
+  height: 100%;
 }
 
-.hero-background {
+.hero-image svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.right-hero-background,
+.left-hero-background {
   position: absolute;
   bottom: 0;
-  right: 0;
   width: 75%;
-  height: 200px;
+  height: 75%;
   background-color: var(--soft-blue);
-  border-bottom-left-radius: 100px;
   z-index: -1;
 }
 
-.hero-image img {
-  display: inline-block;
-  width: 100%;
+.right-hero-background {
+  right: 0;
+  border-bottom-left-radius: 100px;
+}
+
+.left-hero-background {
+  left: 0;
+  border-bottom-right-radius: 100px;
+}
+
+.hero-image-header {
+  fill:hsl(229, 31%, 21%)
 }
 
 .title-description h1,
@@ -193,5 +208,13 @@ footer {
     font-size: 1.1rem;
     box-shadow: ;
   }
+
+  .two-column {
+    flex-direction: row-reverse;
+  }
+
+  /* .two-column .image-left {
+    flex-direction: row;
+  } */
 
 }
