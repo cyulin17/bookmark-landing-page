@@ -5,7 +5,6 @@ const headerBox = document.querySelector('.header-container');
 const svgTextPaths = document.querySelectorAll('.text-color');
 const svgIconCircle = document.querySelector('.icon-color');
 
-
 menubtn.addEventListener('click', function() {
   menus.classList.toggle('hidden');
   headerBox.classList.toggle('blue-background');
@@ -19,4 +18,19 @@ menubtn.addEventListener('click', function() {
 
     menuImage.setAttribute('src', menuImage.getAttribute('src') === './images/icon-hamburger.svg' ? './images/icon-close.svg' :'./images/icon-hamburger.svg')
 
+})
+
+document.querySelectorAll('.accordion-button').forEach(function(accordionbtn) {
+  accordionbtn.addEventListener('click', function() {
+
+  const accordionContent = accordionbtn.nextElementSibling;
+  accordionbtn.classList.toggle('active');
+
+  if(accordionbtn.classList.contains('active')) {
+    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+
+  } else {
+    accordionContent.style.maxHeight = 0;
+  }
+  })
 })
