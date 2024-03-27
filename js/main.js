@@ -50,7 +50,7 @@ tabs.forEach(tab => {
 
       tab.classList.add('active');
       const activeTabContent = document.querySelector(`.content[data-tab="${tab.getAttribute('data-for-tab')}"]`);
-      activeTabContent.style.display = "block";
+      activeTabContent.style.display = "flex";
   })
 
 })

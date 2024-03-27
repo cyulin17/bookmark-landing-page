@@ -27,6 +27,10 @@ ul li {
   display: block;
 }
 
+.text-align-left {
+  text-align: left;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-l);
@@ -58,7 +62,6 @@ h3 {
 }
 
 .main-container {
-  min-width: 375px;
   display: flex;
   flex-direction: column;
 }
@@ -137,31 +140,23 @@ footer {
 
 .hero-image,
 .feature-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-image svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.feature-image {
-  position: relative;
+  max-width: 800px;
   min-width: 300px;
-  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: auto;
   margin-bottom: 50px;
+}
 
+.hero-image img,
+.feature-image img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .feature-image img {
-  max-width: 300px;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 25px;
 }
 
 .right-hero-background,
@@ -170,20 +165,21 @@ footer {
   position: absolute;
   bottom: 0;
   width: 75%;
-  height: 75%;
+  height: 30%;
   background-color: var(--soft-blue);
   z-index: -1;
 }
 
 .right-hero-background {
+  top: 190px;
   right: 0;
-  border-bottom-left-radius: 100px;
+  border-bottom-left-radius: 120px;
 }
 
 .left-hero-background {
-  bottom: -30px;
   left: 0;
-  border-bottom-right-radius: 100px;
+  top: 1420px;
+  border-bottom-right-radius: 120px;
 }
 
 .title-description h1,
@@ -251,6 +247,7 @@ div.extension-item p {
 }
 
 .accordion-item {
+  max-width: 500px;
   border-bottom: 1px solid var(--gray-blue);
   margin: 0 30px;
   padding: 20px 0;
@@ -315,7 +312,6 @@ div.contact-us {
   background-color: var(--soft-blue);
   color: #fff;
   margin-top: 100px;
-
 }
 
 div.contact-us p {
@@ -401,6 +397,13 @@ footer ul.footer-socials li i {
 
 /* Desktop */
 @media screen and (min-width: 850px) {
+
+  .header,
+  .two-column,
+  .title-description {
+    margin: 0 100px;
+  }
+
   .header-container .menu-button, li.socials {
     display: none;
   }
@@ -450,9 +453,56 @@ footer ul.footer-socials li i {
     flex-direction: row-reverse;
   }
 
-  div.three-column ul {
+  .tab-content .two-column {
+    flex-direction: row;
+  }
+
+  div.three-column ul,
+  div.three-column {
     display: flex;
+    flex-direction: row;
 }
 
+  div.three-column ul.tabs li:first-child {
+    border-top: none ;
+  }
+
+  .three-column div.extension-item {
+    margin: 0 15px;
+  }
+
+  .three-column div.extension-item:nth-child(1) {
+    margin-top: 0;
+  }
+  .three-column div.extension-item:nth-child(2) {
+    margin-top: 70px;
+  }
+
+  .three-column div.extension-item:nth-child(3) {
+    margin-top: 140px;
+  }
+
+  .title-description p {
+    width: 500px;
+  }
+
+.right-hero-background,
+.left-hero-background
+ {
+  width: 40%;
+  height: 40%;
+}
+
+.right-hero-background {
+  top: 370px;
+  right: 0;
+  border-bottom-left-radius: 165px;
+}
+
+.left-hero-background {
+  left: 0;
+  top: 1300px;
+  border-bottom-right-radius: 165px;
+}
 
 }
