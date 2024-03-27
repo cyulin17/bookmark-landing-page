@@ -5,6 +5,7 @@ const headerBox = document.querySelector('.header-container');
 const svgTextPaths = document.querySelectorAll('.text-color');
 const svgIconCircle = document.querySelector('.icon-color');
 
+
 menubtn.addEventListener('click', function() {
   menus.classList.toggle('hidden');
   headerBox.classList.toggle('blue-background');
@@ -33,4 +34,23 @@ document.querySelectorAll('.accordion-button').forEach(function(accordionbtn) {
     accordionContent.style.maxHeight = 0;
   }
   })
+})
+
+const tabs = document.querySelectorAll('.tab-item');
+const contents = document.querySelectorAll('.content')
+
+document.addEventListener('DOMContentLoaded', () => {
+  tabs[0].click();
+})
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.style.display = "none");
+
+      tab.classList.add('active');
+      const activeTabContent = document.querySelector(`.content[data-tab="${tab.getAttribute('data-for-tab')}"]`);
+      activeTabContent.style.display = "block";
+  })
+
 })
