@@ -138,48 +138,51 @@ footer {
   font-size: 1.1rem;
 }
 
-.hero-image,
-.feature-image {
-  max-width: 800px;
-  min-width: 300px;
+.image-container {
+  flex-basis: 50%;
   position: relative;
-  width: 100%;
-  height: auto;
-  margin-bottom: 50px;
 }
 
-.hero-image img,
-.feature-image img {
+.image-container img {
+  width: 100%;
+  height: auto;
   display: block;
-  height: auto;
-  width: 100%;
 }
 
-.feature-image img {
-  padding: 25px;
-}
-
-.right-hero-background,
-.left-hero-background
- {
+.image-container::after {
+  content: "";
   position: absolute;
-  bottom: 0;
-  width: 75%;
-  height: 30%;
-  background-color: var(--soft-blue);
+  bottom: -5px;
+  right: -55px;
+  width: 100%;
+  height: 75%;
   z-index: -1;
-}
-
-.right-hero-background {
-  top: 190px;
-  right: 0;
+  background-color: var(--soft-blue);
   border-bottom-left-radius: 120px;
 }
 
 .left-hero-background {
-  left: 0;
-  top: 1420px;
+  position: relative;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.left-hero-background img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.left-hero-background::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: -30%;
+  width: 120%;
+  height: 75%;
+  background-color: var(--soft-blue);
   border-bottom-right-radius: 120px;
+  z-index: -1;
 }
 
 .title-description h1,
@@ -401,7 +404,7 @@ footer ul.footer-socials li i {
   .header,
   .two-column,
   .title-description {
-    margin: 0 100px;
+    margin: 50px 100px;
   }
 
   .header-container .menu-button, li.socials {
@@ -486,23 +489,24 @@ footer ul.footer-socials li i {
     width: 500px;
   }
 
-.right-hero-background,
-.left-hero-background
- {
-  width: 40%;
-  height: 40%;
-}
-
-.right-hero-background {
-  top: 370px;
-  right: 0;
+.image-container::after {
+  right: -250px;
   border-bottom-left-radius: 165px;
 }
 
 .left-hero-background {
-  left: 0;
-  top: 1300px;
+  padding: 0;
+}
+
+.left-hero-background::before {
+  content: '';
+  position: absolute;
+  left: -120%;
+  width: 190%;
+  height: 95%;
+  background-color: var(--soft-blue);
   border-bottom-right-radius: 165px;
+  z-index: -1;
 }
 
 }
