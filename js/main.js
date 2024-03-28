@@ -20,3 +20,37 @@ menubtn.addEventListener('click', function() {
     menuImage.setAttribute('src', menuImage.getAttribute('src') === './images/icon-hamburger.svg' ? './images/icon-close.svg' :'./images/icon-hamburger.svg')
 
 })
+
+document.querySelectorAll('.accordion-button').forEach(function(accordionbtn) {
+  accordionbtn.addEventListener('click', function() {
+
+  const accordionContent = accordionbtn.nextElementSibling;
+  accordionbtn.classList.toggle('active');
+
+  if(accordionbtn.classList.contains('active')) {
+    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+
+  } else {
+    accordionContent.style.maxHeight = 0;
+  }
+  })
+})
+
+const tabs = document.querySelectorAll('.tab-item');
+const contents = document.querySelectorAll('.content')
+
+document.addEventListener('DOMContentLoaded', () => {
+  tabs[0].click();
+})
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.style.display = "none");
+
+      tab.classList.add('active');
+      const activeTabContent = document.querySelector(`.content[data-tab="${tab.getAttribute('data-for-tab')}"]`);
+      activeTabContent.style.display = "flex";
+  })
+
+})
