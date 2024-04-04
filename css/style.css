@@ -331,22 +331,33 @@ div.email-container {
   flex-direction: column;
 }
 
-div.email-container input,
+div.email-container .contact,
 div.email-container button {
   border: 1px solid transparent;
   border-radius: 5px;
-  width: 350px;
+  width: 300px;
   height: 50px
 }
 
-div.email-container input {
+div.email-container .contact {
   padding-left: 20px;
-
   font-size: 1.1rem;
 }
 
-div.email-container input::placeholder {
+div.email-container .contact::placeholder {
   color: var(--gray-blue);
+}
+
+div.email-container .error-message {
+  background-color: var(--soft-red);
+}
+
+div.email-container .contact .is-invalid {
+  background-image: url('/images/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px;
 }
 
 
