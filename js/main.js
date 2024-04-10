@@ -4,7 +4,10 @@ const menus = document.querySelector('.menu');
 const headerBox = document.querySelector('.header-container');
 const svgTextPaths = document.querySelectorAll('.text-color');
 const svgIconCircle = document.querySelector('.icon-color');
-
+const contactInput = document.querySelector('.contact');
+const errorMessage = document.querySelector('.error-message');
+const emailContainer = document.querySelector('.email-container');
+const contactbtn = document.querySelector('.contact-us button');
 
 menubtn.addEventListener('click', function() {
   menus.classList.toggle('hidden');
@@ -41,6 +44,7 @@ const contents = document.querySelectorAll('.content')
 
 document.addEventListener('DOMContentLoaded', () => {
   tabs[0].click();
+
 })
 
 tabs.forEach(tab => {
@@ -54,3 +58,27 @@ tabs.forEach(tab => {
   })
 
 })
+
+contactInput.addEventListener('input', function() {
+
+  if(contactInput.value == '' || validateEmail(contactInput.value)) {
+    errorMessage.style.display = "none";
+    emailContainer.style.background = "none";
+    contactInput.classList.remove('is-invalid');
+
+
+  } else {
+    errorMessage.style.display = "block";
+    contactInput.classList.add('is-invalid');
+    emailContainer.style.background = "var(--soft-red)";
+    contactbtn.style.marginTop = "10px";
+
+
+  }
+
+});
+
+function validateEmail(email) {
+  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
