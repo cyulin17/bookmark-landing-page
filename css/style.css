@@ -327,12 +327,17 @@ div.contact-us h2 {
 }
 
 div.email-container {
+  position:relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 310px;
+  padding-top: 5px;
+  border-radius: 5px;
 }
 
 div.email-container .contact,
-div.email-container button {
+div.contact-us button {
   border: 1px solid transparent;
   border-radius: 5px;
   width: 300px;
@@ -342,6 +347,7 @@ div.email-container button {
 div.email-container .contact {
   padding-left: 20px;
   font-size: 1.1rem;
+  outline: none;
 }
 
 div.email-container .contact::placeholder {
@@ -349,10 +355,15 @@ div.email-container .contact::placeholder {
 }
 
 div.email-container .error-message {
-  background-color: var(--soft-red);
+  background-color: transparent;
+  font-style: italic;
+  font-size: 1rem;
+  padding: 2px 0;
+  text-align: left;
+  width: 290px;
 }
 
-div.email-container .contact .is-invalid {
+div.email-container .contact.is-invalid {
   background-image: url('/images/icon-error.svg');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -361,13 +372,13 @@ div.email-container .contact .is-invalid {
 }
 
 
-div.email-container button {
+div.contact-us button {
   background-color: var(--soft-red);
   border: 1px solid transparent;
   border-radius: 3px;
   color: #fff;
-  margin-top: 20px;
   font-size: 1rem;
+  margin-top: 10px;
 }
 
 footer {
