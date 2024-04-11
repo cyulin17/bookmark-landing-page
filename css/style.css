@@ -420,6 +420,11 @@ footer ul.footer-socials li i {
   fill: #fff
 }
 
+
+li:hover, button:hover {
+  cursor: pointer;
+}
+
 /* Desktop */
 @media screen and (min-width: 850px) {
 
@@ -460,6 +465,12 @@ footer ul.footer-socials li i {
     margin: 0 20px;
   }
 
+  .menu li:hover,
+  div.three-column ul li:hover,
+  .accordion-button:hover {
+    color: var(--soft-red);
+  }
+
   .menu li.log-in {
     padding: 0;
   }
@@ -467,11 +478,17 @@ footer ul.footer-socials li i {
   .log-in button {
     background-color: var(--soft-red);
     width: 120px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 3px;
     color:#fff;
     font-size: 1.1rem;
-    box-shadow: ;
+  }
+
+  .log-in button:hover,
+  div.contact-us button:hover {
+    background-color: #fff;
+    color:var(--soft-red);
+    border-color: var(--soft-red);
   }
 
   .two-column {
@@ -492,6 +509,19 @@ footer ul.footer-socials li i {
     border-top: none ;
   }
 
+  .two-buttons-container button:first-child:hover,
+  .button-container button:hover {
+    background-color: #fff;
+    border-color: var(--soft-blue);
+    color:var(--soft-blue);
+  }
+
+  .two-buttons-container button:nth-child(2):hover {
+    background-color: #fff;
+    color: var(--gray-blue);
+    border-color: var(--gray-blue);
+  }
+
   .three-column div.extension-item {
     margin: 0 15px;
   }
@@ -506,6 +536,8 @@ footer ul.footer-socials li i {
   .three-column div.extension-item:nth-child(3) {
     margin-top: 140px;
   }
+
+
 
   .title-description p {
     width: 500px;
